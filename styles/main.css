@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Variable */
 :root {
     --primary: hsl(0, 100%, 88%);
@@ -16,7 +21,9 @@
     --white: hsl(0, 0%, 100%);
 
     /* fonts */
-    --ff: "Roboto", "sans-serif";
+    --ff: 'Roboto', sans-serif;
+    --ff-logo: 'REM', sans-serif;
+    --logo: bold 1.5rem/1em var(--ff-logo);
     --h1: bold 1.5rem/1em var(--ff);
     --h2: bold 1.25rem/1em var(--ff);
     --p: .75rem/1em var(--ff);
@@ -27,6 +34,11 @@
     --btn-height: 1.5rem;
     --btn-width: 3rem;
     --btn-inner-margin: 3px;
+    --btn-padding-inline: 2rem;
+    --btn-padding-updown: 1rem;
+    --max-screen-width: 1152px;
+    --link-space: 1.25rem;
+    --nav-margin: 20px;
 
     /* radius */
     --btn-radius: 200px;
@@ -44,9 +56,60 @@ body.dark {
     --text-muted: hsl(0, 0%, 70%);
 }
 
+.container{
+    max-width: var(--max-screen-width);
+    padding-inline: 1.2rem;
+    margin-inline: auto;
+}
+
+body{
+    background-color: var(--bg-dark);
+    font-family: var(--ff);
+}
+/* navbar */
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text);
+    margin: var(--nav-margin) 0;
+}
+
+.nav-bar .logo{
+    font: var(--logo);
+}
+
+.nav-link{
+    display: flex;
+    gap: var(--link-space)
+}
+
+.nav-link .bouton{
+    padding: var(--btn-padding-updown) var(--btn-padding-inline);
+    border-radius: var(--btn-radius);
+}
+.signUp .bouton{
+    background: var(--primary);
+    transition: var(--btn-transition);
+}
+
+.signUp .bouton:hover{
+    opacity: .8;
+}
+
+.login .bouton{
+    padding-inline: calc(var(--btn-padding-inline) + .55rem);
+    transition: var(--btn-transition);
+}
+
+.login .bouton:hover{
+    background: var(--bg-light);
+}
+
 .toggle-btn {
     display: flex;
 }
+
 
 .btn {
     background-color: var(--primary);
@@ -71,4 +134,8 @@ body.dark {
 
 input#check:checked+.btn::before {
     transform: translateX(calc(var(--btn-width) - var(--btn-inner-space)));
+}
+
+input#check{
+    display: none;
 }
