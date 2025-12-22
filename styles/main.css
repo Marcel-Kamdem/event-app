@@ -7,26 +7,68 @@
 
 /* Variable */
 :root {
-    --primary: hsl(0, 100, 88);
-    --bg-dark: hsl(0, 0, 90);
-    --bg: hsl(0, 0, 95);
-    --bg-light: hsl(0, 0, 100);
-    --text: hsl(0, 0, 5);
-    --text-muted: hsl(0, 0, 30);
+    --primary: hsl(0, 100%, 88%);
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+    --white: hsl(0, 0%, 100%);
 
     /* fonts */
     --ff: "Roboto", "sans-serif";
     --h1: bold 1.5rem/1em var(--ff);
     --h2: bold 1.25rem/1em var(--ff);
     --p: .75rem/1em var(--ff);
-    
+
+    /* space */
+    --btn-inner-width: 1.125rem;
+    --btn-inner-space: 1.5rem;
+    --btn-height: 1.5rem;
+    --btn-width: 3rem;
+    --btn-inner-margin: 3px;
+
+    /* radius */
+    --btn-radius: 200px;
+
+    /* transition */
+    --btn-transition: 0.2s;
 }
 
-body.light {
-    --primary: hsl(228, 58, 40);
-    --bg-dark: hsl(0, 0, 0);
-    --bg: hsl(0, 0, 5);
-    --bg-light: hsl(0, 0, 10);
-    --text: hsl(0, 0, 95);
-    --text-muted: hsl(0, 0, 70);  
+body.dark {
+    --primary: hsl(228, 58%, 40%);
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 5%);
+    --bg-light: hsl(0, 0%, 10%);
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 70%);
+}
+
+.toggle-btn {
+    display: flex;
+}
+
+.btn {
+    background-color: var(--primary);
+    width: var(--btn-width);
+    height: var(--btn-height);
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    position: relative;
+    transition: var(--btn-transition);
+}
+
+.btn::before {
+    position: absolute;
+    content: '';
+    background-color: var(--white);
+    width: var(--btn-inner-width);
+    height: var(--btn-inner-width);
+    border-radius: var(--btn-radius);
+    margin: var(--btn-inner-margin);
+    transition: var(--btn-transition);
+}
+
+input#check:checked+.btn::before {
+    transform: translateX(calc(var(--btn-width) - var(--btn-inner-space)));
 }
