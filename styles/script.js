@@ -68,12 +68,12 @@ const caroussel_selected = [
     caroussel_state5,
     caroussel_state6
 ];
-const imageCaroussel1 = "/styles/img/Hearo Header img.png"
-const imageCaroussel2 = "/styles/img/Hearo Header img 2.png"
-const imageCaroussel3 = "/styles/img/Hearo Header img 3.png"
-const imageCaroussel4 = "/styles/img/Hearo Header img 4.png"
-const imageCaroussel5 = "/styles/img/Hearo Header img 5.png"
-const imageCaroussel6 = "/styles/img/Hearo Header img 6.png"
+const imageCaroussel1 = "/styles/img/Hearo Header img.webp"
+const imageCaroussel2 = "/styles/img/Hearo Header img 2.webp"
+const imageCaroussel3 = "/styles/img/Hearo Header img 3.webp"
+const imageCaroussel4 = "/styles/img/Hearo Header img 4.webp"
+const imageCaroussel5 = "/styles/img/Hearo Header img 5.webp"
+const imageCaroussel6 = "/styles/img/Hearo Header img 6.webp"
 const imagesCaroussel = [
     imageCaroussel1,
     imageCaroussel2,
