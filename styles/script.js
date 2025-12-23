@@ -68,13 +68,19 @@ const caroussel_selected = [
     caroussel_state5,
     caroussel_state6
 ];
+const imageCaroussel1 = "/styles/img/Hearo Header img.png"
+const imageCaroussel2 = "/styles/img/Hearo Header img 2.png"
+const imageCaroussel3 = "/styles/img/Hearo Header img 3.png"
+const imageCaroussel4 = "/styles/img/Hearo Header img 4.png"
+const imageCaroussel5 = "/styles/img/Hearo Header img 5.png"
+const imageCaroussel6 = "/styles/img/Hearo Header img 6.png"
 const imagesCaroussel = [
-    "https://placehold.co/1152x498/000000/FFF",
-    "https://placehold.co/1152x498/00f045/FFF",
-    "https://placehold.co/1152x498/f0f0f0/FFF",
-    "https://placehold.co/1152x498/00d0d0/FFF",
-    "https://placehold.co/1152x498/0af025/FFF",
-    "https://placehold.co/1152x498/f1f1f1/FFF"
+    imageCaroussel1,
+    imageCaroussel2,
+    imageCaroussel3,
+    imageCaroussel4, 
+    imageCaroussel5, 
+    imageCaroussel6, 
 ]
 let index = 0;
 
