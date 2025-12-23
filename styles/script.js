@@ -1,3 +1,4 @@
+
 //Components definitions
 
 //Toggle button
@@ -49,3 +50,43 @@ class TNav extends HTMLElement{
     }
 }
 customElements.define("t-nav", TNav)
+
+//creation du caroussel
+const caroussel = document.querySelector(".caroussel");
+const caroussel_state1 = document.querySelector(".pictureSelected .state1");
+const caroussel_state2 = document.querySelector(".pictureSelected .state2");
+const caroussel_state3 = document.querySelector(".pictureSelected .state3");
+const caroussel_state4 = document.querySelector(".pictureSelected .state4");
+const caroussel_state5 = document.querySelector(".pictureSelected .state5");
+const caroussel_state6 = document.querySelector(".pictureSelected .state6");
+
+const caroussel_selected = [
+    caroussel_state1,
+    caroussel_state2,
+    caroussel_state3,
+    caroussel_state4,
+    caroussel_state5,
+    caroussel_state6
+];
+const imagesCaroussel = [
+    "https://placehold.co/1152x498/000000/FFF",
+    "https://placehold.co/1152x498/00f045/FFF",
+    "https://placehold.co/1152x498/f0f0f0/FFF",
+    "https://placehold.co/1152x498/00d0d0/FFF",
+    "https://placehold.co/1152x498/0af025/FFF",
+    "https://placehold.co/1152x498/f1f1f1/FFF"
+]
+let index = 0;
+
+setInterval(() => {
+    index ++;
+
+    if (index >= imagesCaroussel.length) {
+        caroussel_selected[index - 1 ].classList.remove("selected");
+        index = 0;
+    }
+    caroussel.setAttribute("src", imagesCaroussel[index]);
+    caroussel_selected[index].classList.add("selected");
+    caroussel_selected[index-1].classList.remove("selected");
+    
+}, 3000);

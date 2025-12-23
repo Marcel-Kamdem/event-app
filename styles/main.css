@@ -36,12 +36,15 @@ a{
     --btn-inner-margin: 3px;
     --btn-padding-inline: 2rem;
     --btn-padding-updown: 1rem;
-    --max-screen-width: 1152px;
+    --max-screen-width: 950px;
     --link-space: 1.25rem;
     --nav-margin: 20px;
 
     /* radius */
     --btn-radius: 200px;
+    --pictureSelected-size: 16px;
+    --pictureSelected-margin-top: 20px;
+    --pictureSelected-gap: 10px;
 
     /* transition */
     --btn-transition: 0.2s;
@@ -56,11 +59,13 @@ body.dark {
     --text-muted: hsl(0, 0%, 70%);
 }
 
-.container{
-    max-width: var(--max-screen-width);
-    padding-inline: 1.2rem;
+.container > *{
+    max-width: min(var(--max-screen-width), calc(100% - 3rem));
     margin-inline: auto;
+    display: block;
 }
+
+
 
 body{
     background-color: var(--bg-dark);
@@ -104,6 +109,29 @@ body{
 
 .login .bouton:hover{
     background: var(--bg-light);
+}
+
+.container .caroussel{
+    max-width: 100%;
+}
+
+.pictureSelected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pictureSelected-gap);
+    margin-top: var(--pictureSelected-margin-top);
+}
+
+.pictureSelected > *{
+    width: var(--pictureSelected-size);
+    height: var(--pictureSelected-size);;
+    border-radius: 50%;
+    background: var(--bg-light);
+}
+
+.pictureSelected .selected{
+    background-color: var(--primary);
 }
 
 .toggle-btn {
